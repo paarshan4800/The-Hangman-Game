@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hangman Game in JS</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+            <img src="hangman.jpg" alt="HANGMAN" width="20%" height="100px">
+            <table>
+            <tr>
+                <td>Word with blanks</td>
+                <td id="wordwithblanks"></td>
+            </tr>
+            <tr>
+                <td>Number of lives left</td>
+                <td id="numoflives"></td>
+            </tr>
+            <tr>
+                <td>Number of blanks left to fill</td>
+                <td id="numofblanks"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="Guess()">Make a Guess</button>
+                </td>
+                <td>
+                    <button onclick="location.reload()">Restart</button>
+                </td>
+            </tr>
+        </table>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
