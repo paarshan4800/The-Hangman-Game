@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hangman</title>
+        <style>
+            h1{
+                font-family: Georgia, serif;
+                font-size: 2rem;
+                color: #69022e;
+            }
+            body{
+                text-align: center;
+                margin-top: 10%;
+            }
+            div{
+                width: 50%;
+                margin: auto;
+                font-size: 150%;
+            }
+            h3{
+                text-decoration: underline;
+            }
+            input[type=submit] {
+                box-shadow:inset 0px 1px 0px 0px #a6827e;
+                background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+                background-color:#7d5d3b;
+                border-radius:3px;
+                border:1px solid #54381e;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:150%;
+                padding:32px 76px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #4d3534;
+            }
+            input[type=submit]:hover {
+                background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+                background-color:#634b30;
+            }
+            input[type=submit]:active {
+                position:relative;
+                top:1px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The Hangman Game</h1>
+        <form action="http://127.0.0.1:5000/start" method="POST">
+            <input type="submit" value="Let's Start">
+        </form>
+        <div>
+            <h3>Note</h3>
+            <p>If you have set the word as "manchester",
+                 then the word with blanks should be like
+                  for example "ma__he_t__"</p>
+        </div>
+    </body>
+</html>

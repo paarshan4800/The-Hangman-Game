@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hangman</title>
+        <style>
+            h1{
+                font-family: Georgia, serif;
+                font-size: 2rem;
+                color: #69022e;
+            }
+            table, td{
+                margin: 0;
+            }
+            td{
+                padding: 10px;
+            }
+            table{
+                font-size: 150%;
+            }
+            input[type=submit]{
+                box-shadow:inset 0px 1px 0px 0px #a6827e;
+                background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+                background-color:#7d5d3b;
+                border-radius:3px;
+                border:1px solid #54381e;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:100%;
+                padding:20px 35px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #4d3534;
+            }
+            input[type=submit]:hover {
+                background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+                background-color:#634b30;
+            }
+            input[type=submit]:active {
+                position:relative;
+                top:1px;
+            }
+        </style>
+    </head>
+    <body style="text-align: center;">
+        {% if jsol == 1 %}
+            <script>
+                alert("Set the word correctly !")
+            </script>
+        {% endif %}
+        <h1>The Hangman Game</h1>
+        <form action="http://127.0.0.1:5000/check" method="POST">
+            <table style="margin: auto;">
+                <tr>
+                    <td>Enter the word</td>
+                    <td><input type="text" autofocus autocomplete="off" name="setWord" required></td>
+                </tr>
+                <tr>
+                    <td>Enter the word with blanks</td>
+                    <td><input type="text" autocomplete="off" name="dashWord" required></td>
+                </tr>
+                <tr>
+                    <td>Enter the number of lives</td>
+                    <td><input type="number" autocomplete="off" name="lives" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+                </table>
+        </form>
+    </body>
+</html>

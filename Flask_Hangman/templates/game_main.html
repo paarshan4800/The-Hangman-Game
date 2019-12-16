@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman</title>
+    </head>
+    <style>
+
+        table, td{
+            margin: 0;
+            text-align: center;
+            padding: 10px;
+        }
+        table{
+            font-size: 150%;
+            margin: auto;
+            margin-top: 10%;
+        }
+        #word{
+            border: 2px solid black;
+        }
+        input[type=submit]{
+            box-shadow:inset 0px 1px 0px 0px #a6827e;
+            background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+            background-color:#7d5d3b;
+            border-radius:3px;
+            border:1px solid #54381e;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:100%;
+            padding:20px 35px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #4d3534;
+        }
+        input[type=submit]:hover {
+            background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+            background-color:#634b30;
+        }
+        input[type=submit]:active {
+            position:relative;
+            top:1px;
+        }
+    </style>
+    <body>
+        {% if jsol == 1 %}
+            <script>
+                alert("You have already guessed this letter")
+            </script> 
+        {% endif %}
+        <form action="http://127.0.0.1:5000/work" method="POST">
+        <table>
+            <tr>
+                <td id="word" colspan="2">{{ ' '.join(dashWord) }}</td>
+            </tr>
+            <tr>
+                <td>Lives left</td>
+                <td>{{ lives }}</td>
+            </tr>
+            <tr>
+                <td>Blanks left to fill</td>
+                <td>{{ tofill }}</td>
+            </tr>
+            <tr>
+                <td>Letter to guess</td>
+                <td><input type="text" autofocus name="GUESS" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Guess"></td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>
